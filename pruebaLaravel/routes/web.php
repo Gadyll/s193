@@ -25,3 +25,6 @@ Route::view('/component','componentes')->name('rutaComponentes');
 Route::get('/', [ControladorVista::class, 'home'])->name('rutaInicio');
 Route::get('/form', [ControladorVista::class, 'formulario'])->name('rutaform');
 Route::get('/consultar', [ControladorVista::class, 'consulta'])->name('rutaClientes');
+
+Route::post('/enviarCliente', [ControladorVista::class, 'procesarCliente'])->name('rutaEnviar');
+
