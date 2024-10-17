@@ -34,6 +34,7 @@
         <p><strong>Apellido:</strong> Cruz</p>
         <p><strong>Telefono:</strong> 720-298-8384</p>
         <p><strong>Matricula:</strong> 122042642</p>
+        <a href="{{ route('repaso1') }}" class="btn btn-primary">REPASO 1</a>
     </div>
     </div>
     </div>
