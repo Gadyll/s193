@@ -36,9 +36,5 @@
         <p><strong>Matricula:</strong> 122042642</p>
         <a href="{{ route('repaso1') }}" class="btn btn-primary">REPASO 1</a>
     </div>
-    </div>
-    </div>
 </body>
-
 </html>
-
