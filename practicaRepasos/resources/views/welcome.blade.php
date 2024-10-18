@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite('resources/js/app.js')
     <title>Doc</title>
-    <!-- <style>
+   <style>
         body {
             background-color: #f7f9fc;
             font-family: 'Arial', sans-serif;
@@ -25,11 +25,11 @@
             font-size: 1.2rem;
             color: #666;
         }
-    </style> -->
+    </style> 
 </head>
 <body>
     <div class="container text-center">
-        <h1>¡Bienvenido :)</h1>
+        <h1>¡¡Bienvenido :)</h1>
         <p><strong>Nombre:</strong> Jhadiel</p>
         <p><strong>Apellido:</strong> Cruz</p>
         <p><strong>Telefono:</strong> 720-298-8384</p>
