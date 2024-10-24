@@ -26,36 +26,14 @@ class ControladorVista extends Controller
 
     public function procesarCliente(Request $peticion)
     {
-        /* return 'Si llego la info del cliente :) '; */
-        
-        //mostramos todo lo que trae la peticion
-     /*    return $peticion->all(); */
-     
-     //ruta donde se realizo la peticion
-     /* return $peticion->path(); */
-
-     //url del origen de la peticion
-     /* return $peticion->url(); */
-
-     /* return $peticion->ip(); */
-     
+        $validacion= $peticion->validate([
+            'txtnombre'=> 'required |min:4 | max:20 ',
+            'txtapellido'=> 'required ',
+            'txtcorreo'=> 'required',
+            'txttelefono'=> 'required|numeric',
+        ]);
 
 
-     //respuestas de redireccion
-
-     //redireccion usando la ruta
-      //return redirect('/');
-
-     //Redireciones usnado el nombre de la ruta
-      //return redirect()->route('rutaClientes');
-
-      //Redirecion al origen de la peticion
-      //return back();
-
-      //redireccionamiento con varible adjunta
-      //$id=[['usuario'=>1],['usuario'=>2]];
-
-      //return view('formulario',compact('id'));
 
       //redireccion con un mensaje flash en session
       $usuario= $peticion->input('txtnombre');
