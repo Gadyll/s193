@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validadorCliente;
 
 class ControladorVista extends Controller
 
@@ -24,12 +25,12 @@ class ControladorVista extends Controller
         return view('clientes');
     }
 
-    public function procesarCliente(Request $peticion)
+    public function procesarCliente(validadorCliente $peticion)
     {
         $validacion= $peticion->validate([
             'txtnombre'=> 'required |min:4 | max:20 ',
-            'txtapellido'=> 'required ',
-            'txtcorreo'=> 'required',
+            'txtapellido'=> 'required |min:4 | max:20 ',
+            'txtcorreo'=> 'email:rfc:dns ',
             'txttelefono'=> 'required|numeric',
         ]);
 
