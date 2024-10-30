@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Requests\validadorFormulario;
 
 class BiblioController extends Controller
 {
@@ -16,7 +17,7 @@ class BiblioController extends Controller
         
     }
 
-    public function procesarCliente(validadorCliente $peticion)
+    public function procesarFormulario(validadorFormulario $peticion)
     {
         $validacion= $peticion->validate([
 
@@ -32,15 +33,10 @@ class BiblioController extends Controller
             
         ]);
 
+    $libro= $peticion->input('txttitulo');
 
-
-     /*  redireccion con un mensaje flash en session
-      $usuario= $peticion->input('txtnombre');
-
-      session()->flash('exito','Se guardo el usuario: '.$usuario);
-      return to_route('rutaform'); */
- 
-
+    session()->flash('exito','Se guardo el Libro: '.$libro);
+    return to_route('rutaregistro');
 
 
 

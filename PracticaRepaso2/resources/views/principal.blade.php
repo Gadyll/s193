@@ -5,14 +5,14 @@
 @section('contenido')
 <div class="container mt-5">
     <div class="text-center">
-        <h1 class="display-4 fw-bold mb-4">Bienvenido</h1>
+        <h1 class="display-4 fw-bold mb-4">Bienvenido a EL TON@</h1>
     </div>
     
     <div class="card shadow-lg mx-auto" style="max-width: 600px;">
         <div class="card-body text-center">
             <div class="mb-4">
                 
-                <img src="URL_DE_LA_IMAGEN" alt="Imagen de Bienvenida" class="img-fluid rounded" style="max-height: 300px; object-fit: cover;">
+                <img src="IMG/PORTADA EL PAÍS.jpg" alt="Imagen de Bienvenida" class="img-fluid rounded" >
             </div>
             
             <div>

@@ -2,9 +2,29 @@
 @section('titulo', 'Registro')
 
 @section('contenido')
+
+<div class="container mt-8 col-md-10">
     
-<div class="card shadow-lg">
-    <div class="card-header bg-primary text-white text-center">
+    @if(session('exito'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('exito') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @session('exito')
+        
+         <script>Swal.fire({
+        title: "Respuesta Servidor",
+        text: '{{ $value }}',
+        icon: "success"
+        }); </script> 
+ 
+        @endsession
+
+    
+
+    <div class="card-header bg-danger text-white text-center">
         <h5 class="mb-0">Registro de Nuevo Libro</h5>
     </div>
     <div class="card-body">
@@ -59,7 +79,7 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary mt-3">Guardar Libro</button>
+                <button type="submit" class="btn btn-danger mt-3">Guardar Libro</button>
             </div>
         </form>
     </div>

@@ -9,8 +9,8 @@
 </head>
 <body>
 
-    {{-- Barra de navegación --}}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   
+    <nav class="navbar navbar-expand-lg navbar-secondary  bg-secondary">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -18,25 +18,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('rutaprincipal') ? 'text-warning' : '' }}" href="{{ route('rutaprincipal') }}">Principal</a>
+                        <a class="nav-link {{ request()->routeIs('rutaprincipal') ? 'text-primary' : '' }}" href="{{ route('rutaprincipal') }}">Principal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-warning' : '' }}" href="{{ route('rutaregistro') }}">Registro</a>
+                        <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-primary' : '' }}" href="{{ route('rutaregistro') }}">Registro</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    {{-- Fin de la barra de navegación --}}
+    
 
-    {{-- Contenido principal --}}
+
     <main class="container my-4">
         @yield('contenido')
     </main>
 
-    {{-- Pie de página --}}
-    <footer class="bg-dark text-light text-center py-3">
-        <p class="mb-0">Biblioteca © {{ now()->format('d F Y') }}</p>
+
+    <footer class="bg-secondary text-white text-center py-3">
+        <p class="mb-0">Biblioteca El Ton@ © {{ now()->format('d F Y') }}</p>
     </footer>
 
 </body>

@@ -14,3 +14,6 @@ Route::get('/registrar', function () {
 Route::get('/', [BiblioController::class, 'home'])->name('rutaprincipal');
 Route::get('/registrar', [BiblioController::class, 'Registro'])->name('rutaregistro');
 
+
+
+Route::post('/registrar', [BiblioController::class, 'procesarFormulario'])->name('rutaregistro');
