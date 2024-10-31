@@ -33,10 +33,13 @@ class BiblioController extends Controller
             
         ]);
 
-    $libro= $peticion->input('txttitulo');
 
-    session()->flash('exito','Se guardo el Libro: '.$libro);
-    return to_route('rutaregistro');
+        
+        $libro = $peticion->input('txttitulo');
+        session()->flash('exito', 'Se guardo el Libro: ' . $libro);
+        return to_route('rutaregistro');
+    
+    
 
 
 

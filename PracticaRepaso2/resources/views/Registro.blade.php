@@ -13,14 +13,29 @@
     @endif
 
     @session('exito')
+    <script>
+        Swal.fire({
+            title: "Respuesta Servidor",
+            text: '{{ $value }}',
+            icon: "success"
+        });
+    </script>
+@endsession
+
+<!-- @if(session('exito'))
+    <div id="custom-alert-container" class="alert alert-success alert-dismissible fade show" role="alert">
+    
+    </div>
+
+    <script>
+        let alerta='{{ session('exito') }}';
+        alertify.success(alerta);
+        document.getElementById('custom-alert-container').innerHTML = alerta,('<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'); 
         
-         <script>Swal.fire({
-        title: "Respuesta Servidor",
-        text: '{{ $value }}',
-        icon: "success"
-        }); </script> 
- 
-        @endsession
+    </script>
+@endif -->
+
+
 
     
 
