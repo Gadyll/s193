@@ -22,10 +22,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('rutaprincipal') ? 'text-primary' : '' }}" href="{{ route('rutaprincipal') }}">Principal</a>
+                        <a class="nav-link {{ request()->routeIs('rutaprincipal') ? 'text-primary' : '' }}" href="{{ route('rutaprincipal') }}">{{ __('Principal')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-primary' : '' }}" href="{{ route('rutaregistro') }}">Registro</a>
+                        <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-primary' : '' }}" href="{{ route('rutaregistro') }}">{{ __('Registro')}}</a>
                     </li>
                 </ul>
             </div>
@@ -40,7 +40,7 @@
 
 
     <footer class="bg-secondary text-white text-center py-3">
-        <p class="mb-0">Biblioteca El Ton@ © {{ now()->format('d F Y') }}</p>
+        <p class="mb-0">{{ __('Biblioteca El Ton@ ©')}} {{ now()->format('d F Y') }}</p>
     </footer>
 
 </body>
