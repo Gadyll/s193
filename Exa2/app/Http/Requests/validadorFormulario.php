@@ -22,7 +22,10 @@ class validadorFormulario extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'txtPrenda'=> 'required|min:4|max:150',
+            'txtColor'=> 'required|min:4|max:150',
+            'txtCantidad'=> 'required|digits:1|numeric',
+
         ];
     }
 }

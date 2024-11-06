@@ -9,31 +9,25 @@ class PrendaController extends Controller
 {
     public function Registro()
     {
-        return view('Registro');
+        return view('RegistroP');
         
     }
 
-    public function procesarCliente(validadorCliente $peticion)
+    public function procesarRegistro(validadorFormulario $peticion)
     {
         $validacion= $peticion->validate([
 
             'txtPrenda'=> 'required|min:4|max:150',
             'txtColor'=> 'required|min:4|max:150',
-            'txtCantidad'=> 'required|digits:13|numeric',
+            'txtCantidad'=> 'required|digits:1|numeric',
 
-
-            
-            
-            
             
         ]);
 
 
+      $prenda= $peticion->input('txtPrenda');
 
-     /*  redireccion con un mensaje flash en session
-      $usuario= $peticion->input('txtnombre');
-
-      session()->flash('exito','Se guardo el usuario: '.$usuario);
-      return to_route('rutaform'); */
+      session()->flash('exito','Se guardo: '.$prenda);
+      return to_route('rutaregister'); 
     }
 }
