@@ -25,7 +25,7 @@
    <h1 class="display-1">{{ __('Binevenido Turista!')}}</h1>
    <p>{{ __('Preciona el boton para iniciar...')}}</p>
 
- <a href="/form" class="btn btn-danger">Ir al registro</a>
+   <!-- <a href="/form" class="btn btn-danger">Ir al registro</a>  -->
   <a href="{{ route('rutaform') }}" class="btn btn-primary">{{ __('Ir al registro')}}</a> 
    
    
