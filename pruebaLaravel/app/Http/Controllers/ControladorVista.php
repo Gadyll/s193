@@ -19,7 +19,7 @@ class ControladorVista extends Controller
 
     public function consulta()
     {
-        return view('clientes');
+        
     }
 
     public function procesarCliente(validadorCliente $peticion)
