@@ -55,26 +55,52 @@ class clienteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Mostrar formulario para editar cliente
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
-        //
+        $cliente = DB::table('clientes')->where('id', $id)->first();
+
+        if (!$cliente) {
+            return redirect()->route('rutaClientes')->with('error', 'Cliente no encontrado.');
+        }
+
+        return view('editarFormulario', compact('cliente'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualizar cliente existente
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'txtnombre' => 'required|max:50',
+            'txtapellido' => 'required|max:50',
+            'txtcorreo' => 'required|email',
+            'txttelefono' => 'required|numeric',
+        ]);
+
+        DB::table('clientes')
+            ->where('id', $id)
+            ->update([
+                'nombre' => $request->input('txtnombre'),
+                'apellido' => $request->input('txtapellido'),
+                'correo' => $request->input('txtcorreo'),
+                'telefono' => $request->input('txttelefono'),
+                'updated_at' => Carbon::now(),
+            ]);
+
+        return redirect()->route('rutaClientes')->with('success', 'Cliente actualizado correctamente.');
     }
 
+
     /**
-     * Remove the specified resource from storage.
+     * Eliminar cliente
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        DB::table('clientes')->where('id', $id)->delete();
+
+        return redirect()->route('rutaClientes')->with('success', 'Cliente eliminado correctamente.');
     }
 }
