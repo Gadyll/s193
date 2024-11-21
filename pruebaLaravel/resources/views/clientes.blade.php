@@ -31,7 +31,7 @@
 
             <div class="card-footer text-muted">
             <a href="{{ route('cliente.edit', $cliente->id) }}" class="btn btn-warning btn-sm">Actualizar</a>
-            <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('¿Está seguro de eliminar este cliente?');">
+            <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('¿Estas seguro de eliminar este cliente?');">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

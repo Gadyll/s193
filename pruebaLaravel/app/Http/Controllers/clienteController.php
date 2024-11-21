@@ -74,8 +74,8 @@ class clienteController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'txtnombre' => 'required|max:50',
-            'txtapellido' => 'required|max:50',
+            'txtnombre' => 'required|max:20',
+            'txtapellido' => 'required|max:20',
             'txtcorreo' => 'required|email',
             'txttelefono' => 'required|numeric',
         ]);
